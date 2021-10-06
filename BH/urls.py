@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.home, name="home"),
     path("home/", views.home, name="home"),
+    path("wie_zijn_wij/", views.wie_zijn_wij, name="wie_zijn_wij"),
     
 ]
 

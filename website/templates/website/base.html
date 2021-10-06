@@ -8,15 +8,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <style type="text/css">
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .intro{
+            border: 2px solid #7e1814;
+        }   
+        
+        .logo{
+            max-width: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid #7e1814;
+        }
 
         .sidenav {
             height: 100%;
-            width: 160px;
+            width: 18%;
             position: fixed;
             z-index: 1;
             top: 0;
             left:0;
-            background-color: #111;
+            background-color: rgb(189, 188, 188);
             overflow-x: hidden;
             padding-top: 20px;
         }
@@ -24,13 +40,13 @@
         .sidenav a {
             padding: 6px 8px 6px 16px;
             text-decoration: none;
-            color: #818181;
-            font-size: 35px;
+            color: #000000;
+            font-size: 25px;
             display: block;
         } 
         
         .sidenav a:hover {
-            color: #f1f1f1;
+            color: #7e1814;
         } 
 
         .main {
@@ -48,6 +64,8 @@
 
 <body>
     <div class="sidenav">
+        {% load static %}
+        <img src="{% static "website/kittenlogo.jpg" %}" alt="Britse Korthaar Kitten" class="logo">
         <a href="/home">Home</a>
         <a href="/create">Wie zijn wij</a>
         <a href="/view">Onze katten</a>
@@ -55,8 +73,8 @@
         <a href="/view">Verkoopvoorwaarde</a>
         <a href="/view">Het verhaal van Noah</a>
         <br>
-        <a href="/view">Contact</a>
-        <a href="/view">Book now!</a>
+        <a href = "mailto:info@blueheritage.nl?subject=BH : Contact via website">Mail ons</a>
+        <a href="/view">Boek een kitten!</a>
         <br>
         <!-- {% if user.is_authenticated == True %}
             <a href="/logout">Log out</a>
@@ -71,7 +89,7 @@
     <div id="content", name="content", class="main">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h1 class="mt-2">My site</h1>
+                <h1 class="mt-2">Blue Heritage Amsterdam</h1>
                 <hr class="mt-0 mb-4">
                 {% block content %}
                 {% endblock %}

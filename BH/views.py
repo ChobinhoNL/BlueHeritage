@@ -7,3 +7,9 @@ def home(response):
 
 def wie_zijn_wij(response):
     return render(response, "website/wie.html", {})
+
+def kittens(response):
+    return render(response, "website/kittens.html", {})
+
+def verkoopvoorwaarden(response):
+    return render(response, "website/verkoopvoorwaarden.html", {})

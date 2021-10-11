@@ -8,8 +8,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <style type="text/css">
+        .bg {
+            /* Full height */
+            height: 100%;
+            width: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+            color: white;
+            font-size: 110%;
+        }
+
         html, body {
-            max-width: 100%;
+            /* max-width: 100%; */
             overflow-x: hidden;
         }
 
@@ -50,7 +65,7 @@
         } 
 
         .main {
-            margin-left: 160px;
+            margin-left: 200px;
             padding: 0px 10px;
         }
     </style>
@@ -63,15 +78,16 @@
 </head>
 
 <body>
-    <div class="sidenav">
+<div class="container">
+<div class="row">
+    <div class="sidenav col-md-4">
         {% load static %}
         <img src="{% static "website/kittenlogo.jpg" %}" alt="Britse Korthaar Kitten" class="logo">
         <a href="/home">Home</a>
         <a href="/wie_zijn_wij">Wie zijn wij</a>
         <a href="/view">Onze katten</a>
-        <a href="/view">Kittens</a>
-        <a href="/view">Verkoopvoorwaarde</a>
-        <a href="/view">Blog</a>
+        <a href="/kittens">Kittens & nieuws</a>
+        <a href="/verkoopvoorwaarden">Verkoopvoorwaarden</a>
         <br>
         <a href = "mailto:info@blueheritage.nl?subject=BH : Contact via website">Mail ons</a>
         <a href="/view">Boek een kitten!</a>
@@ -86,18 +102,19 @@
     </div>
 
 
-    <div id="content", name="content", class="main">
+    <div id="content", name="content", class="main col-md-11">
         <div class="row justify-content-center">
-            <div class="col-8">
-                <h1 class="mt-2">Blue Heritage Amsterdam</h1>
-                <hr class="mt-0 mb-4">
+            <div>
+                <!-- <h1 class="mt-2">Blue Heritage Amsterdam</h1>
+                <hr class="mt-0 mb-4"> -->
                 {% block content %}
                 {% endblock %}
 
             </div>
         </div>
     </div>
-
+</div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 

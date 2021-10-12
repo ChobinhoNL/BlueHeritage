@@ -1,0 +1,25 @@
+{% extends 'website/base.html' %}
+
+{% block title %}
+Blue Heritage Amsterdam - Brits Korthaar Cattery - Onze katten
+{% endblock %}
+
+{% block content %}
+
+<h1>Onze katten</h1>
+<div class="intro"> 
+
+    {% for kat in katten %}
+        <div class="post block">
+            <h2 class="subtitle">{{ kat.naam }}</h2>
+            <p>{{ kat.geboortedatum }}</p>
+        </div>
+        <br>
+
+
+    {% endfor %}
+
+</div>
+</div>
+
+{% endblock %}

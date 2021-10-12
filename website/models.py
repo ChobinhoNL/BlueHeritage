@@ -11,3 +11,11 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-date_added']
+
+class Kat(models.Model):
+    naam = models.CharField(max_length=255)
+    image = models.ImageField(null=True, blank=True, upload_to="katten/")
+    geboortedatum = models.CharField(max_length=10)
+    vader = models.CharField(max_length=255)
+    moeder = models.CharField(max_length=255)
+    BSH = models.CharField(max_length=10)

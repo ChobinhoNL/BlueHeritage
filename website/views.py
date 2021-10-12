@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Kat
 
 # Create your views here.
 def home(response):
@@ -18,3 +18,7 @@ def post_detail(request, slug):
 
 def verkoopvoorwaarden(response):
     return render(response, "website/verkoopvoorwaarden.html", {})
+
+def onze_katten(request):
+    katten = Kat.objects.all()
+    return render(request, "website/onze_katten.html", {'katten': katten})

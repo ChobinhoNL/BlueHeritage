@@ -12,6 +12,9 @@ class Post(models.Model):
     class Meta:
         ordering = ['-date_added']
 
+    def __str__(self):
+        return self.title
+
 class Kat(models.Model):
     naam = models.CharField(max_length=255)
     image = models.ImageField(null=True, blank=True, upload_to="katten/")
@@ -19,3 +22,6 @@ class Kat(models.Model):
     vader = models.CharField(max_length=255)
     moeder = models.CharField(max_length=255)
     BSH = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.naam

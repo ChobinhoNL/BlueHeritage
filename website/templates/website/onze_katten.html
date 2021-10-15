@@ -10,13 +10,26 @@ Blue Heritage Amsterdam - Brits Korthaar Cattery - Onze katten
 <div class="intro"> 
 
     {% for kat in katten %}
-        <div class="post block">
-            <h2 class="subtitle">{{ kat.naam }}</h2>
-            <p>{{ kat.geboortedatum }}</p>
+        <div class="katten block">
+            <table>
+                <tr>
+                    <h2 class="subtitle">{{ kat.naam }}</h2>
+                    <td>
+                        <img class="kat" src="{{ kat.image.url }}">
+                    </td>
+                    <td>
+                    <p>
+                        <b>Geboortedatum</b> : {{ kat.geboortedatum }} <br>
+                        <b>Vader</b> : {{ kat.vader }} <br>
+                        <b>Moeder</b> : {{ kat.moeder }} <br>
+                        <b>{{ kat.BSH }}</b>
+                    </p>
+                    </td>
+                </tr>
+            </table>
+            
         </div>
         <br>
-
-
     {% endfor %}
 
 </div>

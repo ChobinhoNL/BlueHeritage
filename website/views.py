@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Post, Kat
+from .models import Post
+from .models import Kat
 
 # Create your views here.
 def home(response):
@@ -13,7 +14,11 @@ def kittens(request):
     return render(request, "website/kittens.html", {'posts': posts})
 
 def post_detail(request, slug):
-    post = Post.objects.get(slug=slug)
+    try:
+        post = Post.objects.get(slug=slug)
+    except: 
+        post=""
+        print("No post found.")
     return render(request, "website/post_detail.html", {'post': post})
 
 def verkoopvoorwaarden(response):

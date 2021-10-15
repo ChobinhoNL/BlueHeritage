@@ -20,10 +20,12 @@ from website import views
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("home/", views.home, name="home"),
     path("wie_zijn_wij/", views.wie_zijn_wij, name="wie_zijn_wij"),
     path("kittens/", views.kittens, name="kittens"),
     path("verkoopvoorwaarden/", views.verkoopvoorwaarden, name="verkoopvoorwaarden"),
-    path('<slug:slug>/', views.post_detail, name="post_detail"),
+    path("blog/<slug:slug>/", views.post_detail, name="post_detail"),
     path("onze_katten/", views.onze_katten, name="onze_katten"),
+
 ]
 

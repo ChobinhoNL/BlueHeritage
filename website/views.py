@@ -30,14 +30,14 @@ def onze_katten(request):
     katten = Kat.objects.all()
     return render(request, "website/onze_katten.html", {'katten': katten})
 
-def onze_offspring(response):
+def onze_offspring(request):
     offspring = Offspring.objects.all()
-    if response.method == "POST":
-        form = OffspringForm(response.POST)
+    if request.method == "POST":
+        form = OffspringForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
         return redirect("onze_offspring")
     else:
         form = OffspringForm()
-    return render(response, "website/onze_offspring.html", {'offspring': offspring, 'form': form})
+    return render(request, "website/onze_offspring.html", {'offspring': offspring, 'form': form})
 

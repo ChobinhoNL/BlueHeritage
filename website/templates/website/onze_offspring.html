@@ -1,0 +1,31 @@
+{% extends 'website/base.html' %}
+
+{% block title %}
+Blue Heritage Amsterdam - Brits Korthaar Cattery - Onze offspring
+{% endblock %}
+
+{% block content %}
+
+<h1>Onze offspring</h1>
+<div class="intro"> 
+
+    {% for off in offspring %}
+        {% if off.toegestaan %}    
+            <h2 class="subtitle">{{ off.naam }}</h2>
+            <img class="probeersel" src="{{ off.image.url }}">
+        {% endif %}
+    {% endfor %}
+
+
+    <br><br>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <b>Naam van je kat: </b>{{ form.naam }}
+        <b>  Foto van je kat kiezen: </b>{{ form.image }}
+        <input type="submit" value="Verstuur ter goedkeuring">
+    </form>
+
+</div>
+</div>
+
+{% endblock %}

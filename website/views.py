@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from .forms import OffspringForm
 from .models import Post
 from .models import Kat
+from .models import Offspring
 
 # Create your views here.
 def home(response):
@@ -27,3 +29,15 @@ def verkoopvoorwaarden(response):
 def onze_katten(request):
     katten = Kat.objects.all()
     return render(request, "website/onze_katten.html", {'katten': katten})
+
+def onze_offspring(response):
+    offspring = Offspring.objects.all()
+    if response.method == "POST":
+        form = OffspringForm(response.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("onze_offspring")
+    else:
+        form = OffspringForm()
+    return render(response, "website/onze_offspring.html", {'offspring': offspring, 'form': form})
+

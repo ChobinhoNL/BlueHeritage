@@ -26,6 +26,6 @@ urlpatterns = [
     path("verkoopvoorwaarden/", views.verkoopvoorwaarden, name="verkoopvoorwaarden"),
     path("blog/<slug:slug>/", views.post_detail, name="post_detail"),
     path("onze_katten/", views.onze_katten, name="onze_katten"),
-
+    path("onze_offspring/", views.onze_offspring, name="onze_offspring"),
 ]
 

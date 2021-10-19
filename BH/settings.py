@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import psycopg2
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,8 +81,15 @@ WSGI_APPLICATION = 'BH.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', 
-        'NAME': BASE_DIR / 'db.sqlite3',
+    #     'ENGINE': 'django.db.backends.sqlite3', 
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd89qnc84v17rm',
+        'USER': 'rjhxgoudhvtfzd',
+        'PASSWORD': '9fc97c5b2d9fdc09069e8fc79ea0ceb9dcb9f144af0ecd03947131f9ca233add',
+        'HOST': 'ec2-54-74-156-137.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
